@@ -1,0 +1,51 @@
+										Update Date: 2013.12.31
+[How to INSTALL]
+
+Use the "make" command and complete Installation. 
+
+----------------------------------------------------------------
+
+[HOW TO USE]
+
+用法：./mycopy [選項] [檔案......]
+選項：
+-h                       檢視此輔助說明
+-e 檔案1 [檔案2......]   檔案加密（加密後檔案將會附加副檔名.cip）
+-d 檔案1 [檔案2......]   檔案解密（解密後檔案將會附加副檔名.txt）
+-c 資料夾 資料夾         複製資料夾至目的
+
+----------------------------------------------------------------
+
+[Source Code & Function List]
+
+src/main.c
+	void Help();		-> Show the help message. 
+	void Error(char);	-> Show the error message. 
+
+
+src/crypt.h src/crypt.c
+	Public(.h): 
+		void Encrypt(char*);	-> Do encrypt. 
+		void Decrypt(char*);	-> Do decrypt.
+
+	Private:
+		char* encrypt(char*);	-> the encrypt algorithm. 
+		char* decrypt(char*);	-> the decrypt algorithm. 
+
+
+src/file.h src/file.c
+	Public(.h):
+		void Copy(char*, char*);	-> Do copy.
+
+	Private:
+		void copyFile(char*, char*);	-> do the file copy. 
+		void createDir(char*);			-> create a directory. 
+		void findDir(char*, char*);		-> search the directory tree struct and call some function to do the copy and encrypt. 
+		void removeDir(char*);			-> remove the all subfile and subdirectory of a directory. 
+
+--------------------------------------------------------------
+
+[Other]
+
+102-1 Homework 2 in the course "Operating System". 
+made by 資工二 410121021 林育慈

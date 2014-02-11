@@ -1,0 +1,80 @@
+												Update Date: 2014.1.11
+[Execute Record]
+
+1. System Contention Scope (Scope Default)
+
+Thread ID   Turnaround Time
+----------  ---------------
+3050838848   57451 us
+3042446144   59821 us
+3059231552   78732 us
+3076016960   87577 us
+3067624256   87903 us
+
+2. Process Contention Scope 
+
+Thread ID   Turnaround Time
+----------  ---------------
+3059690304   59624 us
+3051297600   69301 us
+3076475712   75278 us
+3042904896   86323 us
+3068083008   84203 us
+
+3. System Contention Scope + FCFS
+
+Thread ID   Turnaround Time
+----------  ---------------
+3042933568   59618 us
+3059718976   61658 us
+3051326272   66639 us
+3076504384   84494 us
+3068111680   89438 us
+
+4. Process Contention Scope + FCFS
+
+Thread ID   Turnaround Time
+----------  ---------------
+3059497792   65335 us
+3067890496   66217 us
+3076283200   67591 us
+3042712384   91031 us
+3051105088   82072 us
+
+5. System Contention Scope + RR
+
+Thread ID   Turnaround Time
+----------  ---------------
+3042081600   62863 us
+3050474304   68167 us
+3058867008   71058 us
+3067259712   90779 us
+3075652416   91230 us
+
+6. Process Contention Scope + RR
+
+Thread ID   Turnaround Time
+----------  ---------------
+3075967808   62194 us
+3042396992   64473 us
+3067575104   68804 us
+3050789696   96783 us
+3059182400   99399 us
+
+-----------------------------------------------------------------------
+
+[Discuss]
+
+1. 也許因為process執行所需耗費的時間不多，因此各scheduling所耗費的時間差距並不太大，不過還是稍微看得出小差異。
+
+2. System Contention Scope 由於是直接使用Kenel thread而非user-level thread，因此效率會略快於Process Contention Scope。
+
+3. RR所耗費的時間會較FCFS多些，推估是進行thread時，CPU因為要一直轉換要處理的thread，因此有了dispatch latency，因而稍微較FCFS慢些。
+
+-----------------------------------------------------------------------
+
+[Other]
+
+102-1 Homeword 3 in the course "Operating System". 
+made by 資工二 410121021 林育慈
+

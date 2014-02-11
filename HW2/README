@@ -1,0 +1,68 @@
+										Update Date: 2013.12.27
+[How to INSTALL]
+
+Use the "make" command and complete Installation. 
+
+----------------------------------------------------------------
+
+[HOW TO USE]
+
+用法：./mycopy [選項] [檔案......]
+選項：
+-h                       檢視此輔助說明
+-e 檔案1 [檔案2......]   檔案加密（加密後檔案將會附加副檔名.cip）
+-d 檔案1 [檔案2......]   檔案解密（解密後檔案將會附加副檔名.txt）
+-c 資料夾 資料夾         複製資料夾至目的
+
+----------------------------------------------------------------
+
+[Source Code List]
+
+src/main.c
+src/crypt.h src/crypt.c
+src/file.h src/file.c
+
+----------------------------------------------------------------
+
+[Method]
+
+1. Copy & Encrypt
+	1. Use the linux command "cp" to do the copy. 
+	2. Use the linux command "ls" to list all file and director in the target director, and find the "*.txt" file. 
+	3. Encrypt the "*.txt" file and make a new file named "*.cip". 
+	4. Use the linux command "rm" to remove the "*.txt" file. 
+	5. Complete the "Copy & Encrypt" work. 
+
+2. Encrypt
+	1. Open the file that need to encrypt. 
+	2. Store the text into array. 
+	3. Make a new file to store the cipher. 
+	4. Do encrypt. 
+	5. Store the cipher into the new file. 
+	6. Complete the "Encrypt" work. 
+
+3. Decrypt
+	1. Open the file that need to decrypt. 
+	2. Stor the cipher into array. 
+	3. Make a new file to store the text. 
+	4. Do decrypt. 
+	5. Store the text into the new file. 
+	6. Complete the "Decrypt" work. 
+
+4. Help
+	1. Check the user's input, if have some error, the help message will appear. 
+
+----------------------------------------------------------------
+
+[Enviroment]
+
+Operating System and Version: Ubuntu 12.10
+Linux Kernel Version: 3.5.0-44-generic
+GNU coreutils Version: 8.13 
+
+----------------------------------------------------------------
+
+[Other]
+
+102-1 Homework 2 in the course "Operating System". 
+made by 資工大二 410121021 林育慈

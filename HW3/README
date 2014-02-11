@@ -1,0 +1,55 @@
+												Update Date: 2014.1.11
+[How to INSTALL]
+
+Use the "make" command command and complete Installation. 
+
+-----------------------------------------------------------------------
+
+[HOW TO USE]
+
+Process Scope: 
+	./myscheduler -p
+
+System Scope: 
+	./myscheduler –s
+
+First-Come-First-Serve:
+	./myscheduler –f
+
+Round-Robin:
+	./myscheduler –r
+
+Output file:
+	./myscheduler –o
+
+Exmaple: 
+runs Round-Robin with System Scope and output file is test.txt
+	./myscheduler –r –s –o test.txt
+
+-----------------------------------------------------------------------
+
+[Source Code & Function List]
+
+main.c
+	void *runner(void*);					-> the event need to do
+	void getPolicy(pthread_attr_t, int);	-> show the scheduling policy
+	void getScope(pthread_attr_t, int);		-> show the scope
+	void showHelp();						-> show the Help message
+
+-----------------------------------------------------------------------
+
+[Method]
+
+1. get default attribute
+2. set the scope and scheduling policy
+3. set the output file
+4. create thread
+5. output each thread execute time
+6. the output of event is write into the file
+
+-----------------------------------------------------------------------
+
+[Other]
+
+102-1 Homeword 3 in the course "Operating System". 
+made by 資工二 410121021 林育慈
